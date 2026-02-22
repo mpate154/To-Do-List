@@ -7,24 +7,13 @@
   border-radius: 4rem;
 }
 
-button {
-  border-radius: 4rem;
-  border: none;
-  background-color: #7a8c5e;
-  font-size: 50px;
-  color: #f5f0e8;
-}
-
-button:hover {
-  background-color: rgb(69, 90, 67);
-}
 #container {
   /* background-color: rgb(129, 161, 129); */
   height: 600px;
   width: 1200px;
   display: grid;
   grid-template-columns: 200px 900px 100px;
-  grid-template-rows: 200px 300px 100px;
+  grid-template-rows: 200px 200px 50px 50px;
   gap: 20px 20px;
 }
 
@@ -51,7 +40,7 @@ button:hover {
 
 #input {
   width: 200px;
-  height: 300px;
+  height: 200px;
   grid-row: 2;
   grid-column: 1;
   box-sizing: border-box;
@@ -83,11 +72,34 @@ button:hover {
   outline-color: rgb(179, 168, 154);
 }
 
+button {
+  border-radius: 4rem;
+  border: none;
+  background-color: #7a8c5e;
+  color: #f5f0e8;
+  font-family: "Jersey 10", sans-serif;
+  font-weight: 400;
+}
+
+button:hover {
+  background-color: rgb(69, 90, 67);
+}
+
 #addButton {
   width: 200px;
-  height: 60px;
+  height: 50px;
   grid-row: 3;
   grid-column: 1;
+  line-height: 50px;
+  font-size: 40px;
+}
+
+#clearButton {
+  width: 200px;
+  height: 50px;
+  grid-column: 1;
+  grid-row: 4;
+  font-size: 24px;
 }
 
 #list {
@@ -142,7 +154,7 @@ li:nth-child(odd) {
 
 #progressedBar {
   width: 36px;
-  background-color:rgb(69, 90, 67);
+  background-color: rgb(69, 90, 67);
   position: absolute;
   bottom: 0;
   height: 50%;

@@ -29,16 +29,19 @@ function App() {
     );
   }
 
-  
+  function clearTasks() {
+    setTasks([]);
+  }
+
   let total = 0;
   let done = 0;
   tasks.map((task) => {
-    total = task.text != "" ? total +1 : total
-    done = task ? (task.done ? done+1 : done) : done
+    total = task.text != "" ? total + 1 : total;
+    done = task ? (task.done ? done + 1 : done) : done;
   });
   console.log("total: ", total);
   console.log("done: ", done);
-  let progressedBarHeight = total == 0 ? 0 : done/total * 100
+  let progressedBarHeight = total == 0 ? 0 : (done / total) * 100;
 
   //date functions
   // how make update ever so often? i think it does automatically?
@@ -99,6 +102,9 @@ function App() {
         <button onClick={handleSubmit} name="addButton" id="addButton">
           +
         </button>
+        <button id="clearButton" onClick={clearTasks}>
+          Clear Tasks
+        </button>
 
         {/* task list (limit it) */}
         <div id="list" class="card">
@@ -126,8 +132,11 @@ function App() {
         <div id="progress" class="card">
           <div id="progressBar">
             <div id="fullBar" class="card">
-              <div id="progressedBar" class="card"
-              style={{height: `${progressedBarHeight}%`}}></div>
+              <div
+                id="progressedBar"
+                class="card"
+                style={{ height: `${progressedBarHeight}%` }}
+              ></div>
               <span id="progressTitle">Progress</span>
             </div>
           </div>
