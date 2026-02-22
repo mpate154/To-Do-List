@@ -12,11 +12,11 @@ button {
   border: none;
   background-color: #7a8c5e;
   font-size: 50px;
-  color: white;
+  color:  #f5f0e8;
 }
 
 button:hover {
-  background-color: #4c573d;
+  background-color: rgb(69, 90, 67);
 }
 #container {
   /* background-color: rgb(129, 161, 129); */
@@ -59,7 +59,6 @@ button:hover {
 }
 
 #taskForm {
-  /* padding: 10px;  */
   width: 100%;
   height: 100%;
   display: flex;

@@ -104,7 +104,7 @@ function App() {
                         ? "0 0 4rem 4rem"
                         : "0",
                   textDecoration: tasks[index]?.done ? "line-through" : "none",
-                  color: tasks[index]?.done ? "grey" : "black",
+                  color: tasks[index]?.done ? "grey" : "#3D3D3D",
                 }}
               >
                 {tasks[index] ? tasks[index].text : ""}
