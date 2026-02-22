@@ -78,6 +78,11 @@ function App() {
 
   return (
     <>
+    <div id="header-container">
+      {/* title */}
+      <h1 id="title">To-do List Task Tracker</h1>
+      <p id="instructions">Track your daily tasks here! Write your task in the text bubble to the left. Then click the "+" button to add it to the list. Click on the to-do to mark it as done. Click once more to mark as undone. Watch your progress on the right and clear your tasks once your finished!</p>
+      </div>
       <div id="container">
         {/* date */}
         <div id="date" class="card">
@@ -86,7 +91,7 @@ function App() {
           <h2>{month}</h2>
         </div>
 
-        {/* input field and add button */}
+        {/* input field, add button, and clear tasks button */}
         <div id="input" class="card">
           <form action="POST" name="taskForm" id="taskForm">
             {/* <label for=""></label> */}
