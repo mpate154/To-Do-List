@@ -1,0 +1,75 @@
+/* #root {
+ 
+} */
+
+.card{
+  background-color: #F5F0E8;
+  border-radius: 4rem;
+}
+
+button {
+  border-radius: 4rem;
+  border: none;
+  background-color: #7A8C5E;
+  font-size: 50px;
+  color: white
+}
+
+button:hover{
+  background-color: #4c573d;
+}
+#container{
+  /* background-color: rgb(129, 161, 129); */
+  height: 600px;
+  width: 1200px; 
+  display: grid;
+  grid-template-columns: 200px 1000px;
+  grid-template-rows: 200px 300px 100px;
+  gap: 20px 20px;
+}
+
+#date {
+  width: 200px;
+  height: 200px; 
+  grid-row: 1;
+  grid-column: 1; 
+  align-content: center;
+  justify-items: center;
+  
+}
+
+#dateCircle {
+  font-size: 40px;
+  background-color: rgb(69, 90, 67);
+  color:  #F5F0E8;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  border-radius: 40px;
+  justify-content: center;
+  align-items: center;
+}
+
+#input{
+  width: 200px;
+  height: 300px; 
+  grid-row: 2;
+  grid-column: 1;
+}
+
+#addButton{
+  width: 200px;
+  height: 60px;
+  grid-row: 3;
+  grid-column: 1;
+  
+}
+
+#list{
+ width: 1000px;
+ height: 600px;
+ grid-row: 1 2;
+ grid-column: 2;
+
+
+}
