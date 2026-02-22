@@ -10,7 +10,7 @@
 #header-container {
   display: grid;
   grid-template-columns: auto auto;
-  width: 1200px
+  width: 1240px
 }
 
 #title {
@@ -26,7 +26,7 @@
 #container {
   /* background-color: rgb(129, 161, 129); */
   height: 600px;
-  width: 1200px;
+  width: 1240px;
   display: grid;
   grid-template-columns: 200px 900px 100px;
   grid-template-rows: 200px 200px 70px 70px;

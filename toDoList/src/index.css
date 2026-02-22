@@ -2,14 +2,18 @@
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   font-weight: 400;
 
-  color: #3D3D3D;
-  background-color: #6B7A52;
+  color: #3d3d3d;
+  background-color: #6b7a52;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  margin: 5vh 
+}
+
+#root {
+  width: 1240px;
+  margin: 5vh auto; /* auto left/right centers it */
 }
 
 .jersey-10-regular {
@@ -22,12 +26,14 @@ body {
   font-family: "Jersey 10", sans-serif;
   font-weight: 400;
   font-style: normal;
-  align-content: center;
-  justify-items: center;
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
 }
 
-
-h1, h2, p{
+h1,
+h2,
+p {
   margin: 0;
   padding: 8px;
 }
