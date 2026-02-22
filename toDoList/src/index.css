@@ -22,6 +22,8 @@ body {
   font-family: "Jersey 10", sans-serif;
   font-weight: 400;
   font-style: normal;
+  align-content: center;
+  justify-items: center;
 }
 
 
