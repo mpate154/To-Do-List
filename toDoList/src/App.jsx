@@ -29,6 +29,17 @@ function App() {
     );
   }
 
+  
+  let total = 0;
+  let done = 0;
+  tasks.map((task) => {
+    total = task.text != "" ? total +1 : total
+    done = task ? (task.done ? done+1 : done) : done
+  });
+  console.log("total: ", total);
+  console.log("done: ", done);
+  let progressedBarHeight = total == 0 ? 0 : done/total * 100
+
   //date functions
   // how make update ever so often? i think it does automatically?
   let date = new Date();
@@ -111,6 +122,15 @@ function App() {
               </li>
             ))}
           </ul>
+        </div>
+        <div id="progress" class="card">
+          <div id="progressBar">
+            <div id="fullBar" class="card">
+              <div id="progressedBar" class="card"
+              style={{height: `${progressedBarHeight}%`}}></div>
+              <span id="progressTitle">Progress</span>
+            </div>
+          </div>
         </div>
       </div>
     </>
