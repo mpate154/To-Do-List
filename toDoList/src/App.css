@@ -1,6 +1,15 @@
 /* #root {
  
 } */
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 99;
+}
 
 .card {
   background-color: #f5f0e8;
@@ -10,7 +19,7 @@
 #header-container {
   display: grid;
   grid-template-columns: auto auto;
-  width: 1240px
+  width: 1240px;
 }
 
 #title {
@@ -32,7 +41,6 @@
   grid-template-rows: 200px 200px 70px 70px;
   gap: 20px 20px;
 }
-
 
 #date {
   width: 200px;
@@ -130,7 +138,7 @@ button:hover {
 ul {
   display: grid;
   grid-template-rows: 12;
-  list-style-position: inside;
+  list-style: none;
   /* list-style-image: */
   width: 100%;
   height: 100%;
@@ -142,14 +150,37 @@ li {
   width: 100%;
   height: 50px;
   padding-left: 36px;
-  line-height: 50px;
+  display: flex;
+  list-style-position: inside;
+  align-items: center;
+  box-sizing: border-box;
   font-size: 20px;
-  cursor: pointer;
 }
 
 li:nth-child(odd) {
+  display: flex;
+  padding-left: 36px;
+  line-height: 50px;
+
+  cursor: pointer;
   background-color: rgb(224, 215, 205);
-  width: 864px;
+  width: 100%;
+}
+
+li p {
+  padding: 0;
+  position: relative;
+}
+
+.deleteButton {
+  margin-left: auto;
+  height: 100%;
+  width: 48px;
+  border-radius: 0;
+  font-size: 32px;
+  border-style: none none solid none;
+  border-width: 1px;
+  border-color: rgb(69, 90, 67);
 }
 
 #progress {

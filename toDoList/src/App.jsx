@@ -1,11 +1,12 @@
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./App.css";
+import DeletePopUp from "./components/deletePopUp";
 
 function App() {
   const [inputValue, setInputValue] = useState("");
   const [tasks, setTasks] = useState([]);
+  const [isDisplayed, setIsDisplayed] = useState(false);
+  const [deletedIndex, setDeletedIndex] = useState(null);
 
   function handleSubmit() {
     //whats max length?
@@ -29,6 +30,20 @@ function App() {
     );
   }
 
+  function deleteClicked(index) {
+    if (tasks[index].text == "") return;
+    //set index tosend
+    setDeletedIndex(index);
+    //display warning
+    setIsDisplayed(true);
+  }
+  function deleteTask(index) {
+    console.log("index sent: ", index);
+    setTasks(tasks.filter((task, i) => i !== index));
+    //deleteIndex= null;
+    setIsDisplayed(false);
+  }
+
   function clearTasks() {
     setTasks([]);
   }
@@ -39,8 +54,6 @@ function App() {
     total = task.text != "" ? total + 1 : total;
     done = task ? (task.done ? done + 1 : done) : done;
   });
-  console.log("total: ", total);
-  console.log("done: ", done);
   let progressedBarHeight = total == 0 ? 0 : (done / total) * 100;
 
   //date functions
@@ -78,10 +91,26 @@ function App() {
 
   return (
     <>
-    <div id="header-container">
-      {/* title */}
-      <h1 id="title">To-do List Task Tracker</h1>
-      <p id="instructions">Track your daily tasks here! Write your task in the text bubble to the left. Then click the "+" button to add it to the list. Click on the to-do to mark it as done. Click once more to mark as undone. Watch your progress on the right and clear your tasks once your finished!</p>
+      {/* {deleteIsClicked? : } */}
+      {isDisplayed && (
+        <>
+        <div id="overlay"onClick={() => setIsDisplayed(false)}/>
+        <DeletePopUp
+          deleteTask={deleteTask}
+          index={deletedIndex}
+          setIsDisplayed={setIsDisplayed}
+        />
+        </>
+      )}
+      <div id="header-container">
+        {/* title */}
+        <h1 id="title">To-do List Task Tracker</h1>
+        <p id="instructions">
+          Track your daily tasks here! Write your task in the text bubble to the
+          left. Then click the "+" button to add it to the list. Click on the
+          to-do to mark it as done. Click once more to mark as undone. Watch
+          your progress on the right and clear your tasks once your finished!
+        </p>
       </div>
       <div id="container">
         {/* date */}
@@ -115,21 +144,30 @@ function App() {
         <div id="list" class="card">
           <ul>
             {Array.from({ length: 12 }, (_, index) => (
-              <li
-                key={index}
-                onClick={() => toggleTask(index)}
-                style={{
-                  borderRadius:
-                    index === 0
-                      ? "4rem 4rem 0 0"
-                      : index === 11
-                        ? "0 0 4rem 4rem"
-                        : "0",
-                  textDecoration: tasks[index]?.done ? "line-through" : "none",
-                  color: tasks[index]?.done ? "grey" : "#3D3D3D",
-                }}
-              >
-                {tasks[index] ? tasks[index].text : ""}
+              <li key={index}>
+                <p
+                  onClick={() => toggleTask(index)}
+                  style={{
+                    borderRadius:
+                      index === 0
+                        ? "4rem 4rem 0 0"
+                        : index === 11
+                          ? "0 0 4rem 4rem"
+                          : "0",
+                    textDecoration: tasks[index]?.done
+                      ? "line-through"
+                      : "none",
+                    color: tasks[index]?.done ? "grey" : "#3D3D3D",
+                  }}
+                >
+                  {tasks[index] ? tasks[index].text : ""}
+                </p>
+                <button
+                  class="deleteButton"
+                  onClick={() => deleteClicked(index)}
+                >
+                  ×
+                </button>
               </li>
             ))}
           </ul>

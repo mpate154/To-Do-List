@@ -1,0 +1,20 @@
+#deletePopUp {
+  width: 440px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+}
+
+.popupButton {
+  padding: 12px;
+  width: 64px;
+  margin: 8px;
+  font-size: 20px;
+}
